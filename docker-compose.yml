@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - TZ=America/Mexico_City
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
